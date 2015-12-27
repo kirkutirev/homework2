@@ -32,9 +32,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/title"
+        android:layout_below="@+id/frameLayout"
         android:layout_alignLeft="@+id/frameLayout"
         android:layout_alignStart="@+id/frameLayout"
-        android:layout_below="@+id/frameLayout"
         android:layout_alignRight="@+id/frameLayout"
         android:layout_alignEnd="@+id/frameLayout"
         android:hint="title" />
