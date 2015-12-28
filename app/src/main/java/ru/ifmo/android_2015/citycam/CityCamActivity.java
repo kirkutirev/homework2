@@ -94,7 +94,7 @@ public class CityCamActivity extends AppCompatActivity {
         }
     }
 
-    private class MyCam {
+    private static class MyCam {
         String preview;
         String title;
         String webcamid;
@@ -106,7 +106,7 @@ public class CityCamActivity extends AppCompatActivity {
         }
     }
 
-    class DownloadFileTask extends AsyncTask<Void, Void, Integer> {
+    static class DownloadFileTask extends AsyncTask<Void, Void, Integer> {
 
         private CityCamActivity activity;
         private Bitmap preview = null;
@@ -128,10 +128,6 @@ public class CityCamActivity extends AppCompatActivity {
                 activity.camImageView.setImageBitmap(preview);
                 activity.title.setText(cam.title);
                 activity.webcamid.setText("camera id - " + cam.webcamid);
-            } else {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "Continue downloading", Toast.LENGTH_SHORT);
-                toast.show();
             }
         }
 
@@ -164,10 +160,6 @@ public class CityCamActivity extends AppCompatActivity {
                 activity.camImageView.setImageBitmap(preview);
                 activity.title.setText(cam.title);
                 activity.webcamid.setText("camera id - " + cam.webcamid);
-            } else {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "No cameras in this city", Toast.LENGTH_SHORT);
-                toast.show();
             }
         }
 
@@ -240,7 +232,7 @@ public class CityCamActivity extends AppCompatActivity {
         }
     }
 
-    private Bitmap downloadImage(URL url) throws IOException {
+    private static Bitmap downloadImage(URL url) throws IOException {
         if (url == null) return null;
         HttpURLConnection connection = null;
         InputStream inputStream = null;
